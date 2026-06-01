@@ -8,6 +8,10 @@
     font-weight: 400;
 }
 
+body {
+    margin-bottom: 116px;
+}
+
 .products {
     display: flex;
     justify-content: center;
