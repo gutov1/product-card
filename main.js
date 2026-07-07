@@ -32,10 +32,10 @@ function openGoogle() {
 
 // Вывод контента заголовка
 
-const outputHeaderContent = document.querySelector('.products__title');
+const productTitle = document.querySelector('.products__title');
 
-outputHeaderContent.addEventListener('mouseover', () => {
-  console.log(outputHeaderContent.textContent)
+productTitle.addEventListener('mouseover', () => {
+  console.log(productTitle.textContent)
 })
 
 // Переключение цветов кнопки
