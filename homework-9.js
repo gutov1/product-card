@@ -1,3 +1,4 @@
+import { socialComments } from './comments.js';
 
 // 2 - фильтруем массив чисел, оставляя только те, что >= 5
 
@@ -30,8 +31,6 @@ console.log(reverseArray(kitchenTools));
 
 // 7 - filter отбирает комментарии, у которых в email есть ".com"
  
-import { socialComments } from './comments.js';
-
 const commentsWithComEmail = socialComments.filter(comment => comment.email.includes('.com'));
 
 console.log(commentsWithComEmail);
