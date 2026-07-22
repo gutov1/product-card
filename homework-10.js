@@ -8,7 +8,7 @@ const renderProductCards = (products) => {
   products.forEach(product => {
     const productClone = productTemplate.content.cloneNode(true);
 
-    productClone.querySelector('.product-card__img').src = product.img;
+    productClone.querySelector('.product-card__img').src = `img/${product.img}.png`;;
     productClone.querySelector('.product-card__tag').textContent = product.category;
     productClone.querySelector('.product-card__title').textContent = product.title;
     productClone.querySelector('.product-card__description').textContent = product.description;
@@ -29,9 +29,9 @@ const renderProductCards = (products) => {
 };
 
 const productsWithTitleAndDesc = products.reduce((acc, product) => {
-  acc[product.title] = product.description
+  acc.push({[product.title]: product.description});
   return acc;
-}, {});
+}, []);
 
 
 const getCardsCount = () => {
@@ -50,5 +50,5 @@ console.log(productsWithTitleAndDesc);
 
 
 const count = getCardsCount(); 
-const cardsToShow = products.slice(0, count);
-renderProductCards(cardsToShow); 
+const truncatedProducts = products.slice(0, count);
+renderProductCards(truncatedProducts); 
