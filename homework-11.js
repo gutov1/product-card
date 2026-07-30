@@ -1,4 +1,9 @@
-const emailForm = document.querySelector('.footer__subscribe-form')
+const getFormData = (form) => {
+  const formData = new FormData(form);
+  return Object.fromEntries(formData.entries());
+};
+
+const emailForm = document.querySelector('.footer__subscribe-form');
 emailForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const form = event.target;
@@ -7,10 +12,9 @@ emailForm.addEventListener('submit', (event) => {
     return;
   }
 
-  const formData = new FormData(form);
-  const data = Object.fromEntries(formData.entries());
+  const data = getFormData(form);
   console.log(data);
-})
+});
 
 const regBtn = document.querySelector('.register-btn');
 const overlay = document.querySelector('.overlay');
@@ -18,8 +22,6 @@ const closeBtn = document.querySelector('.modal__close');
 const registerForm = document.querySelector('.modal__form');
 const passwordInput = document.querySelector('#password');
 const repeatPasswordInput = document.querySelector('#repeatPassword');
-
-
 
 regBtn.addEventListener('click', () => {
   overlay.classList.add('modal-showed');
