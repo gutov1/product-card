@@ -47,8 +47,7 @@ registerForm.addEventListener('submit', (event) => {
     return;
   }
 
-  const formData = new FormData(registerForm);
-  const data = Object.fromEntries(formData.entries());
+  const data = getFormData(registerForm);
   data.createdOn = new Date();
 
   user = data;
