@@ -1,57 +1,47 @@
-const getFormData = (form) => {
-  const formData = new FormData(form);
-  return Object.fromEntries(formData.entries());
-};
+import Modal from "./Modal.js";
+import Form from "./Form.js";
 
-const emailForm = document.querySelector('.footer__subscribe-form');
-emailForm.addEventListener('submit', (event) => {
+const registerModal = new Modal("registerModal");
+const subscribeForm = new Form("subscribeForm")
+const registerForm = new Form("registerForm")
+
+document.getElementById("subscribeForm").addEventListener('submit', (event) => {
   event.preventDefault();
   const form = event.target;
 
-  if (!form.checkValidity()) {
+  if (!subscribeForm.isValid()) {
     return;
   }
 
-  const data = getFormData(form);
-  console.log(data);
+  console.log(subscribeForm.getValues());
 });
+
+
 
 const regBtn = document.querySelector('.register-btn');
-const overlay = document.querySelector('.overlay');
-const closeBtn = document.querySelector('.modal__close');
-const registerForm = document.querySelector('.modal__form');
-const passwordInput = document.querySelector('#password');
-const repeatPasswordInput = document.querySelector('#repeatPassword');
 
 regBtn.addEventListener('click', () => {
-  overlay.classList.add('modal-showed');
+  registerModal.open();
 });
 
-closeBtn.addEventListener('click', () => {
-  overlay.classList.remove('modal-showed');
-});
-
-registerForm.addEventListener('submit', (event) => {
+document.getElementById('registerForm').addEventListener('submit', (event) => {
   event.preventDefault();
-  let user;
-  const password = passwordInput.value;
-  const repeatPassword = repeatPasswordInput.value;
+  
+  const values = registerForm.getValues();
 
-  if (password !== repeatPassword) {
+  if (values.password !== values.repeatPassword) {
     alert('Регистрация отклонена: пароли не совпадают');
     return;
   }
 
-  if (!registerForm.checkValidity()) {
+  if (!registerForm.isValid()) {
     alert('Регистрация отклонена: заполните все поля корректно');
     return;
   }
 
-  const data = getFormData(registerForm);
-  data.createdOn = new Date();
+  values.createdOn = new Date();
+  console.log(values);
 
-  user = data;
-
-  console.log(user);
-  overlay.classList.remove('modal-showed');
+  registerModal.close();
+  registerForm.reset();
 });

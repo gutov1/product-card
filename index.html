@@ -17,10 +17,6 @@
         <button class="change-colors-btn">Переключить цвета кнопки</button>
         <button type="button"  class="register-btn">Регистрация</button>
     </div>
-    
-    <div class="modal">
-
-    </div>
 
     <div class="products products--bg">
         <h1 class="products__title">Выбери свой продукт</h1>
@@ -61,7 +57,7 @@
             </div>
             <div class="footer__subscribe">
                 <h2 class="footer__subscribe-title">Подпишись на наши акции:</h2>
-                <form class="footer__subscribe-form">
+                <form class="footer__subscribe-form" id="subscribeForm">
                     <input class="footer__subscribe-input" type="email" placeholder="Введи Email..." required name="email">
                     <hr class="footer__subscribe-divider">
                     <button class="footer__subscribe-button">Подписаться</button>
@@ -92,13 +88,11 @@
         </div>
     </footer>
 
-
-
-    <div class="overlay">
+    <div class="overlay" id="registerModal">
         <div class="modal">
             <button class="modal__close">×</button>
             <h2 class="modal__title">Регистрация</h2>
-            <form class="modal__form">
+            <form class="modal__form" id="registerForm">
                 <label for="firstName">Имя</label>
                 <input type="text" id="firstName" name="firstName" placeholder="Введите имя" required>
 
@@ -122,11 +116,6 @@
         </div>
     </div>
 
-    <script src="main.js"></script>
-    <script src="homework-7.js"></script>
-    <script src="homework-8.js"></script>
-    <script src="homework-9.js" type="module"></script>
-    <script src="homework-10.js" type="module"></script>
-    <script src="homework-11.js"></script>
+    <script src="main.js" type="module"></script>
 </body>
 </html>
