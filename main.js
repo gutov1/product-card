@@ -1,47 +1,48 @@
-// Покрас одной карточки
+import './homework-6.js';
+import './homework-7.js';
+import './homework-8.js';
+import './homework-9.js';
+import './homework-10.js';
+import './homework-11.js';
+import './comments.js';
+import './products-data.js';
 
-const productCard = document.querySelector('.product-card');
-const changeColorBtn = document.querySelector('.change-color-card-btn');
+class Device {
+  constructor(brand, model, price) {
+    this.brand = brand;
+    this.model = model;
+    this.price = price;
+  }
 
-changeColorBtn.addEventListener('click', () => {
-  productCard.style.backgroundColor = '#b7b5ecff';
-})
-
-// Покрас всех карточек
-
-const productCards = document.querySelectorAll('.product-card');
-const changeAllColorBtn = document.querySelector('.change-all-color-card-btn');
-
-changeAllColorBtn.addEventListener('click', () => {
-  productCards.forEach((card) => card.style.backgroundColor = '#b7b5ecff')
-})
-
-// Открыть google
-
-const openGoogleBtn = document.querySelector('.open-google');
-
-openGoogleBtn.addEventListener('click', openGoogle)
-
-function openGoogle() {
-  const answer = confirm('Вы хотите открыть Google?');
-
-  if (answer === true) {
-    window.open('https://google.com')
+  getInfo() {
+    console.log(`${this.brand} ${this.model} - ${this.price}$`);
   }
 }
 
-// Вывод контента заголовка
+class Smartphone extends Device {
+  constructor(brand, model, price, camera) {
+    super(brand, model, price);
+    this.camera = camera;
+  }
 
-const productTitle = document.querySelector('.products__title');
+  takePhoto() {
+    console.log(`${this.brand} ${this.model} сделал фото на камеру ${this.camera}MP`);
+  }
+}
 
-productTitle.addEventListener('mouseover', () => {
-  console.log(productTitle.textContent)
-})
+class Laptop extends Device {
+  constructor(brand, model, price, ram) {
+    super(brand, model, price);
+    this.ram = ram;
+  }
 
-// Переключение цветов кнопки
+  compile() {
+    console.log(`${this.brand} ${this.model} имеет ${this.ram}GB оперативной памяти`);
+  }
+}
 
-const switchColorBtn = document.querySelector('.change-colors-btn');
+const iphone = new Smartphone("Apple", "iPhone 15", 45000, 48);
+const macbook = new Laptop("Apple", "MacBook Pro", 100000, 32);
 
-switchColorBtn.addEventListener('click', () => {
-  switchColorBtn.classList.toggle('btn--active')
-})
+iphone.takePhoto();
+macbook.compile();
