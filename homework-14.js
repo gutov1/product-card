@@ -9,6 +9,8 @@ export class Modal {
     this.overlayClickHandler = () => {
       this.close();
     }
+
+    this.#initOpen(buttonId);
   }
 
   open() {
