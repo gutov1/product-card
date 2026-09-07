@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Иван",
+      "surname": "Петров",
+      "email": "ivan.petrov@mail.ru",
+      "age": 27,
+      "city": "Москва"
+    },
+    {
+      "id": 2,
+      "name": "Анна",
+      "surname": "Сидорова",
+      "email": "anna.sidorova@gmail.com",
+      "age": 24,
+      "city": "Санкт-Петербург"
+    },
+    {
+      "id": 3,
+      "name": "Дмитрий",
+      "surname": "Кузнецов",
+      "email": "dmitry.kuznetsov@yandex.ru",
+      "age": 31,
+      "city": "Казань"
+    },
+    {
+      "id": 4,
+      "name": "Мария",
+      "surname": "Новикова",
+      "email": "maria.novikova@mail.ru",
+      "age": 22,
+      "city": "Новосибирск"
+    },
+    {
+      "id": 5,
+      "name": "Сергей",
+      "surname": "Волков",
+      "email": "sergey.volkov@gmail.com",
+      "age": 35,
+      "city": "Екатеринбург"
+    },
+    {
+      "id": 6,
+      "name": "Ольга",
+      "surname": "Морозова",
+      "email": "olga.morozova@yandex.ru",
+      "age": 29,
+      "city": "Нижний Новгород"
+    }
+  ]
+}

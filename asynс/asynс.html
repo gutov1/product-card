@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>База пользователей</title>
+<link rel="stylesheet" href="/asynс/asynс.css">
+</head>
+<body>
+
+  <h1>База пользователей</h1>
+
+  <div class="toolbar">
+    <button type="button" id="btn-get-all">Получить всех</button>
+    <button type="button" id="btn-delete-all">Удалить всех</button>
+  </div>
+
+  <p id="info-message" hidden></p>
+
+  <p id="loading-screen" hidden>Данные загружаются...</p>
+
+  <p id="error-screen" hidden>Ошибка при загрузке данных</p>
+
+  <p id="empty-screen" hidden>Пользователей нет</p>
+
+  <div id="users-container"></div>
+
+  <template id="user-card-template">
+    <div class="user-card" data-id="">
+      <h3>
+        <span class="user-card__firstname"></span>
+        <span class="user-card__surname"></span>
+      </h3>
+      <p>ID: 
+        <span class="user-card__id-value"></span>
+      </p>
+      <p>Email: 
+        <span class="user-card__email"></span>
+      </p>
+      <p>Возраст: 
+        <span class="user-card__age"></span>
+      </p>
+      <button type="button" class="user-card__delete">Удалить</button>
+    </div>
+  </template>
+
+  <script src="/asynс/asynс.js"></script>
+</body>
+</html>
